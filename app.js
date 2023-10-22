@@ -26,7 +26,7 @@ app.use((req, res, next) => {
 
 app.use("/cliente", clienteRoute)
 app.use("/oficinas", oficinasRoute)
-app.use("/veiculo", oficinasRoute)
+app.use("/veiculo", veiculoRoute)
 
 //creates a new error if none of the routes are used
 app.use((req, res, next) => {
