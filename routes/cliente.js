@@ -21,7 +21,7 @@ router.get("/:id", (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error.message, status: 500})}
         conn.query(
-            `SELECT * FROM cliente WHERE id = ${id}`,
+            `SELECT * FROM cliente WHERE idCliente = ${id}`,
             (error, result, fields) => {
                 conn.release()
                 if(error){return res.status(500).send({error: error}) }
