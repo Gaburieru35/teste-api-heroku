@@ -10,7 +10,7 @@ router.get("/", (req, res, next)=>{
             (error, result, fields) => {
                 conn.release()
                 if(error){return res.status(500).send({error: error}) }
-                else{ return res.status(200).send({cliente: result}) }
+                else{ return res.status(200).send({orcamento: result}) }
             }
         )
     })
@@ -25,7 +25,7 @@ router.get("/:id", (req, res, next)=>{
             (error, result, fields) => {
                 conn.release()
                 if(error){return res.status(500).send({error: error}) }
-                if(result.length > 0){ return res.status(200).send({skill: result}) }
+                if(result.length > 0){ return res.status(200).send({orcamento: result}) }
                 else{ return res.status(404).send({error: {statusCode: 404, description: "Not Found"}})}
             }
         )
