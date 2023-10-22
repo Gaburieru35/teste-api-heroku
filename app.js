@@ -6,6 +6,8 @@ const bodyParser = require('body-parser')
 const clienteRoute = require("./routes/cliente")
 const oficinasRoute = require("./routes/oficinas")
 const veiculoRoute = require("./routes/veiculo")
+const funcionarioRoute = require("./routes/funcionario")
+const oracamentoRoute = require("./routes/orcamento")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
@@ -27,6 +29,8 @@ app.use((req, res, next) => {
 app.use("/cliente", clienteRoute)
 app.use("/oficinas", oficinasRoute)
 app.use("/veiculo", veiculoRoute)
+app.use("/funcionario", funcionarioRoute)
+app.use("/orcamento", oracamentoRoute)
 
 //creates a new error if none of the routes are used
 app.use((req, res, next) => {
