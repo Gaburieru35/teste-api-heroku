@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 app.use((error, req, res, next) => {
     res.status = error.status || 500
     return res.send({
-        mensagem: error.message + ": Available resources: [tdolls, equipments, users]" 
+        mensagem: error.message + ": Available resources: [oficinas, cliente]" 
     })
 })
 
