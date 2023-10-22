@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 //import das rotas
 const clienteRoute = require("./routes/cliente")
 const oficinasRoute = require("./routes/oficinas")
+const veiculoRoute = require("./routes/veiculo")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
@@ -25,6 +26,7 @@ app.use((req, res, next) => {
 
 app.use("/cliente", clienteRoute)
 app.use("/oficinas", oficinasRoute)
+app.use("/veiculo", oficinasRoute)
 
 //creates a new error if none of the routes are used
 app.use((req, res, next) => {
@@ -36,7 +38,7 @@ app.use((req, res, next) => {
 app.use((error, req, res, next) => {
     res.status = error.status || 500
     return res.send({
-        mensagem: error.message + ": Available resources: [oficinas, cliente]" 
+        mensagem: error.message + ": Available resources: [oficinas, cliente, veiculo]" 
     })
 })
 
