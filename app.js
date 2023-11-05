@@ -10,7 +10,7 @@ const funcionarioRoute = require("./routes/funcionario")
 const oracamentoRoute = require("./routes/orcamento")
 
 //importa das rotas PUT
-const veiculoAlterarRoute = require("./routes/veiculo")
+const veiculoAlterarRoute = require("./routes/alterar/veiculo")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
