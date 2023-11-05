@@ -42,7 +42,7 @@ app.use("/orcamento", oracamentoRoute)
 app.use("/cliente/alterar", clienteAlterarRoute)
 app.use("/oficina/alterar", oficinasAlterarRoute)
 app.use("/veiculo/alterar", veiculoAlterarRoute)
-app.use("/funcionario/alterar", veiculoAlterarRoute)
+app.use("/funcionario/alterar", funcionarioAlterarRoute)
 app.use("/orcamento/alterar", OrcamentoAlterarRoute)
 
 //creates a new error if none of the routes are used
