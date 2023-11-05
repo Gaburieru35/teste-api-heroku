@@ -6,7 +6,7 @@ router.get("/", (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error.message, status: 500})}
         conn.query(
-            "SELECT * FROM funcionario f join usuario u on u.idUusario = f.usuario_idUsuario",
+            "SELECT * FROM funcionario f join usuario u on u.idUsuario = f.usuario_idUsuario",
             (error, result, fields) => {
                 conn.release()
                 if(error){return res.status(500).send({error: error}) }
@@ -21,7 +21,7 @@ router.get("/:id", (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error.message, status: 500})}
         conn.query(
-            `SELECT * FROM funcionario f join usuario u on u.idUusario = f.usuario_idUsuario WHERE usuario_idUsuario = ${id}`,
+            `SELECT * FROM funcionario f join usuario u on u.idUsuario = f.usuario_idUsuario WHERE usuario_idUsuario = ${id}`,
             (error, result, fields) => {
                 conn.release()
                 if(error){return res.status(500).send({error: error}) }
