@@ -10,7 +10,10 @@ const funcionarioRoute = require("./routes/funcionario")
 const oracamentoRoute = require("./routes/orcamento")
 
 //importa das rotas PUT
+const clienteAlterarRoute = require("./routes/alterar/cliente")
+const oficinasAlterarRoute = require("./routes/alterar/oficinas")
 const veiculoAlterarRoute = require("./routes/alterar/veiculo")
+const OrcamentoAlterarRoute = require("./routes/alterar/orcamento")
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true}))
@@ -28,13 +31,17 @@ app.use((req, res, next) => {
     }
     next();
 })
-
+//GET
 app.use("/cliente", clienteRoute)
 app.use("/oficinas", oficinasRoute)
 app.use("/veiculo", veiculoRoute)
 app.use("/funcionario", funcionarioRoute)
 app.use("/orcamento", oracamentoRoute)
-app.use("/alterar/veiculo", veiculoAlterarRoute)
+//PUT
+app.use("/cliente/alterar", clienteAlterarRoute)
+app.use("/oficina/alterar", oficinasAlterarRoute)
+app.use("/veiculo/alterar", veiculoAlterarRoute)
+app.use("/orcamento/alterar", OrcamentoAlterarRoute)
 
 //creates a new error if none of the routes are used
 app.use((req, res, next) => {
