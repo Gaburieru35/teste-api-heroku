@@ -13,6 +13,7 @@ const oracamentoRoute = require("./routes/orcamento")
 const clienteAlterarRoute = require("./routes/alterar/cliente")
 const oficinasAlterarRoute = require("./routes/alterar/oficinas")
 const veiculoAlterarRoute = require("./routes/alterar/veiculo")
+const funcionarioAlterarRoute = require("./routes/alterar/funcionario")
 const OrcamentoAlterarRoute = require("./routes/alterar/orcamento")
 
 app.use(express.json())
@@ -41,6 +42,7 @@ app.use("/orcamento", oracamentoRoute)
 app.use("/cliente/alterar", clienteAlterarRoute)
 app.use("/oficina/alterar", oficinasAlterarRoute)
 app.use("/veiculo/alterar", veiculoAlterarRoute)
+app.use("/funcionario/alterar", veiculoAlterarRoute)
 app.use("/orcamento/alterar", OrcamentoAlterarRoute)
 
 //creates a new error if none of the routes are used
