@@ -8,7 +8,7 @@ router.put("/:id", (req, res, next)=>{
     mysql.getConnection((error, conn) => {
         if(error){return res.status(500).send({error: error.message, status: 500})}
         conn.query(
-            `update oficinas set nome = '${nome}' WHERE idOficinas = ${id}`,
+            `update oficinas set nome = '${nome}' WHERE idoficinas = ${id}`,
             (error, result, fields) => {
                 conn.release()
                 if (error) {
