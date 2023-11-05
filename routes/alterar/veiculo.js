@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const mysql = require('../mysql').pool
+const mysql = require('../../mysql').pool
 
 router.put("/:id", (req, res, next)=>{
     const id = req.params.id
