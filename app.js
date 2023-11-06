@@ -8,6 +8,8 @@ const oficinasRoute = require("./routes/oficinas")
 const veiculoRoute = require("./routes/veiculo")
 const funcionarioRoute = require("./routes/funcionario")
 const oracamentoRoute = require("./routes/orcamento")
+const reparoRoute = require("./routes/reparo")
+const servicoRoute = require("./routes/servico")
 
 //importa das rotas PUT
 const clienteAlterarRoute = require("./routes/alterar/cliente")
@@ -38,6 +40,8 @@ app.use("/oficinas", oficinasRoute)
 app.use("/veiculo", veiculoRoute)
 app.use("/funcionario", funcionarioRoute)
 app.use("/orcamento", oracamentoRoute)
+app.use("/reparo", reparoRoute)
+app.use("/servico", servicoRoute)
 //PUT
 app.use("/cliente/alterar", clienteAlterarRoute)
 app.use("/oficina/alterar", oficinasAlterarRoute)
@@ -55,7 +59,7 @@ app.use((req, res, next) => {
 app.use((error, req, res, next) => {
     res.status = error.status || 500
     return res.send({
-        mensagem: error.message + ": Available resources: [oficinas, cliente, veiculo, funcionario, orcamento]" 
+        mensagem: error.message + ": Available resources: [oficinas, cliente, veiculo, funcionario, orcamento, reparo, servico]" 
     })
 })
 
